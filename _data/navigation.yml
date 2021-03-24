@@ -1,0 +1,43 @@
+# main links
+main:
+  # - title: "Quick-Start Guide"
+  #   url: https://mmistakes.github.io/minimal-mistakes/docs/quick-start-guide/
+  # - title: "About"
+  #   url: https://mmistakes.github.io/minimal-mistakes/about/
+  # - title: "Sample Posts"
+  #   url: /year-archive/
+  # - title: "Sample Collections"
+  #   url: /collection-archive/
+  # - title: "Sitemap"
+  #   url: /sitemap/
+  - title: "Category"
+    url: /categories/
+  - title: "Tag"
+    url: /tags/
+  - title: "Archive"
+    url: /month-archive/
+
+docs:
+  - title: About
+    children:
+      - title: "Introduction"
+        url: /docs/introduction/
+
+  - title: Study
+    children:
+      - title: "Certificate"
+        url: /docs/certificate/
+      - title: "Python3"
+        url: /docs/python3/
+
+  - title: Works
+    children:
+      - title: "ELK Stack"
+        url: /docs/elkstack/
+      - title: "VMware"
+        url: /docs/vmware/
+      - title: "Construction"
+        url: /docs/construction/
+
+sidebar:
+  nav: "docs"
