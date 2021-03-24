@@ -19,9 +19,7 @@ main:
 
 docs:
   - title: About
-    children:
-      - title: "Introduction"
-        url: /docs/introduction/
+    url: /docs/about/
 
   - title: Study
     children:
@@ -38,6 +36,3 @@ docs:
         url: /docs/vmware/
       - title: "Construction"
         url: /docs/construction/
-
-sidebar:
-  nav: "docs"
