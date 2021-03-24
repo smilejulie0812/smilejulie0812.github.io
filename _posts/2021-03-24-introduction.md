@@ -1,5 +1,5 @@
 ---
-title: "About"
+title: "introduction"
 excerpt_separator: "<!--more-->"
 categories:
   - About
