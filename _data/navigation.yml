@@ -20,19 +20,3 @@ main:
 docs:
   - title: About
     url: /docs/about/
-
-  - title: Study
-    children:
-      - title: "Certificate"
-        url: /docs/certificate/
-      - title: "Python3"
-        url: /docs/python3/
-
-  - title: Works
-    children:
-      - title: "ELK Stack"
-        url: /docs/elkstack/
-      - title: "VMware"
-        url: /docs/vmware/
-      - title: "Construction"
-        url: /docs/construction/
