@@ -20,7 +20,7 @@ title                    : "Julie's Diary"
 title_separator          : "-"
 subtitle                 : # site tagline that appears below site title in masthead
 name                     : "Julie's Diary"
-description              : "업무 및 개인 공부를 기록합니다"
+description              : "Work and Study"
 url                      : "https://smilejulie0812.github.io" # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : # the subpath of your site, e.g. "/blog"
 repository               : "smilejulie0812/minimal-mistakes" # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
@@ -280,7 +280,7 @@ defaults:
       layout: single
       classes: wide
       author_profile: true
-      read_time: # true
+      read_time: true
       comments: # true
       share: # true
       related: true
