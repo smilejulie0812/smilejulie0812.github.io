@@ -1,10 +1,10 @@
 ---
 title: "Introduction"
 excerpt_separator: "<!--more-->"
-#categories:
-#  - About
-#tags:
-#  - Introduce
+categories:
+  - About
+tags:
+  - Introduce
 sidebar:
   nav: "docs"
 ---
