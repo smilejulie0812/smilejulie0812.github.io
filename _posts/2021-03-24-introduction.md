@@ -5,8 +5,6 @@ categories:
   - About
 tags:
   - Introduction
-sidebar:
-  nav: "docs"
 ---
 
 안녕하세요. 주리입니다.
