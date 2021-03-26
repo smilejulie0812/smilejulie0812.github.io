@@ -19,11 +19,11 @@ sidebar:
 * 전 회사 상사에게 나 이 정도 할 수 있다고 자랑하기(?)
 
 세부 사항에 따라 변경될 가능성은 크지만, 개괄적인 공부 계획은 이 정도로 짜 두도록 한다.
-1. [프로그래머스(파이썬 입문) 강의](https://programmers.co.kr/learn/courses/2)
+**Step 1** [프로그래머스(파이썬 입문) 강의](https://programmers.co.kr/learn/courses/2)
    \+ [CodeUp Python 기초 100제](https://codeup.kr/problemsetsol.php?psid=33)
-2. [프로그래머스(어서와! 자료구조와 알고리즘은 처음이지?) 강의](https://programmers.co.kr/learn/courses/57)
+**Step 2** [프로그래머스(어서와! 자료구조와 알고리즘은 처음이지?) 강의](https://programmers.co.kr/learn/courses/57)
    \+ [백준 단계별로 풀어보기](https://www.acmicpc.net/step)
-3. [프로그래머스(파이썬을 무기로, 코딩테스트 광탈을 면하자!) 강의](https://programmers.co.kr/learn/courses/9877)
+**Step 3** [프로그래머스(파이썬을 무기로, 코딩테스트 광탈을 면하자!) 강의](https://programmers.co.kr/learn/courses/9877)
    \+ [프로그래머스 코딩테스트 연습](https://programmers.co.kr/learn/challenges)
 
 자격증 공부도 병행하며 움직이는만큼, 번아웃 오지 않게 페이스 조절하며 꾸준히 공부할 수 있기를.
