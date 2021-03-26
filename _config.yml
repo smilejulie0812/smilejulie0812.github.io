@@ -96,7 +96,7 @@ analytics:
 author:
   name             : "Julie Lee"
   avatar           : "/assets/images/avatar.png" # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
-  bio              : "DevOps Engineer"
+  bio              : "IT Infrastructure Engineer"
   location         : "Incheon, Korea"
   email            :
   links:
@@ -280,7 +280,7 @@ defaults:
       layout: single
       classes: wide
       author_profile: true
-      read_time: true
+      read_time: # true
       comments: # true
       share: # true
       related: true
