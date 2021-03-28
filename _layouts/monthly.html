@@ -5,7 +5,7 @@ layout: archive
 {{ content }}
 
 <ul class="taxonomy__index">
-  {% assign postsInMonth = site.posts | group_by_exp: 'post', 'post.date | date: "%Y/%m"' %}
+  {% assign postsInMonth = site.posts | group_by_exp: 'post', 'post.date | date: "%Y.%m"' %}
   {% for month in postsInMonth %}
     <li>
       <a href="#{{ month.name }}">
@@ -15,7 +15,7 @@ layout: archive
   {% endfor %}
 </ul>
 
-{% assign postsByMonth = site.posts | group_by_exp: 'post', 'post.date | date: "%Y/%m"' %}
+{% assign postsByMonth = site.posts | group_by_exp: 'post', 'post.date | date: "%Y.%m"' %}
 {% for month in postsByMonth %}
   <section id="{{ month.name }}" class="taxonomy__section">
     <h2 class="archive__subtitle">{{ month.name }}</h2>
