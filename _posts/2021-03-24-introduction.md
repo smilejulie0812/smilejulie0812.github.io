@@ -1,5 +1,5 @@
 ---
-title: "Introduction"
+title: "Who is Julie"
 excerpt_separator: "<!--more-->"
 categories:
   - About
