@@ -2,6 +2,7 @@
 layout: posts
 permalink: /month-archive/
 title: "Posts by Month"
+entries_layout: grid
 author_profile: true
 ---
 {% assign postsByYear = site.posts | group_by_exp:"post", "post.date | date: '%Y.%m'"  %}
