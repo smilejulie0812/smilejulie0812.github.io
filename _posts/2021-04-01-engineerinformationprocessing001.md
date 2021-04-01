@@ -2,7 +2,7 @@
 title: "정보처리기사 Java 기출문제(1)"
 excerpt_separator: "<!--more-->"
 categories:
-  - 정보처리기사
+  - Certificate
 tags:
   - 정보처리기사
   - Java
@@ -22,8 +22,8 @@ class test1{
 	}
 }
 ```
-Result:
-> 0 1 2 3
+>Result:
+>> 0 1 2 3
 
 #### 2020년 1회
 ```java
@@ -50,8 +50,8 @@ class test2{
     }
 }
 ```
-Result:
-> -8
+>Result:
+>> -8
 
 #### 2020년 2회
 ```java
@@ -72,8 +72,8 @@ public class Main{								// Main 클래스를 public class로 정의
     }
 }
 ```
-Result:
-> Child
+>Result:
+>> Child
 
 * **오버라이딩**은 자식 클래스가 부모 클래스를 재정의하는 것은 가능하나, 부모 클래스가 자식 클래스를 재정의하여 사용하는 것은 불가능
 {: .notice--info}
@@ -103,8 +103,8 @@ public class Main{							// Main 클래스를 public class로 정의
     }
 }
 ```
-Result:
-> a=10
+>Result:
+>> a=10
 
 * **this**: 클래스 필드의 변수 자리에, 메소드의 매개변수값을 대입한다.
 * **super**: 부모 클래스로부터 상속받은 변수, 메소드를 사용한다.
@@ -127,8 +127,8 @@ class test5{
     }
 }
 ```
-Result:
-> a=10
+>Result:
+>> a=10
 
 `while`문의 `continue`는 처리를 반복하는 의미, `break`는 처리를 중단하는 의미를 가짐.
 {: .notice--info}
