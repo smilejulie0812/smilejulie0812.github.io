@@ -105,9 +105,9 @@ class Child extends Parent{
 
 class Exam{
     public static void main(String[] args){
-        Parent obj = new Child();   // 1) obj는 Child 인스턴스를 가진다.
-        System.out.print(obj.compute(4));   // 2) obj.compute(4)는 Child 클래스의 compute 메서드를 실행시키라는 의미
-            // 5) 4)에서 모인 값을 계산하면, compute(4) = compute(3)+compute(1) = 0+1 = 1 즉, 1이 출력되어야 함.
+        Parent obj = new Child();   			// 1) obj는 Child 인스턴스를 가진다.
+        System.out.print(obj.compute(4));   		// 2) obj.compute(4)는 Child 클래스의 compute 메서드를 실행시키라는 의미
+            						// 5) 4)에서 모인 값을 계산하면, compute(4) = compute(3)+compute(1) = 0+1 = 1 즉, 1이 출력되어야 함.
     }
 }
 ```
