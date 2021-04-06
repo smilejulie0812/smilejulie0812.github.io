@@ -10,7 +10,7 @@ sidebar:
   nav: "docs"
 ---
 #### 2020년 1회
-```C
+```c++
 void main() {
 	int i, j;	// 정수형 변수 i와 j 선언
     int temp;	// 정수형 변수 temp 선언: 숫자 정렬시 임시로 보관할 장소 지정
@@ -37,7 +37,7 @@ void main() {
 {: .notice--info}
 
 #### 2020년 3회
-```C
+```c++
 #include <stdio.h>
 void main() {
     int i=0, c=0;		// 정수형 변수 i와 c를 선언한 후, 각각 0을 지정해준다
@@ -61,7 +61,7 @@ void main() {
 </div>
 
 #### 2020년 3회
-```C
+```c++
 #include <stdio.h>
 int r1() {
     return 4; // 4) r1 메소드의 값으로 4를 반환하므로 r10에 대입한다
@@ -80,7 +80,7 @@ int main(){
 >234
 
 #### 2020년 4회
-```C
+```c++
 #include <stdio.h>
 
 void main(){
@@ -93,8 +93,8 @@ void main(){
     printf("%c\n", *p+2);   // p가 가리치는 값(*p=K)로부터 2개 떨어져있는 알파벳은 M이므로, M을 출력
 }
 ```
->KOREA
-EA
-K
-E
+>KOREA  
+EA  
+K  
+E  
 M
