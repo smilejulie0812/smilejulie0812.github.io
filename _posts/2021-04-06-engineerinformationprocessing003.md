@@ -1,5 +1,5 @@
 ---
-title: "정보처리기사 2020년 C언어 기출문제"
+title: "정보처리기사 2020년도 C언어 기출문제"
 excerpt_separator: "<!--more-->"
 categories:
   - Certificate
