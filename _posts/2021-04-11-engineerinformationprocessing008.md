@@ -190,12 +190,12 @@ main(){
 
 <div class="notice--info" markdown="1">
 **연결 리스트(Linked List)**:  
+※ [이해에 도움된 블로그](https://m.blog.naver.com/PostView.nhn?blogId=lghlove0509&logNo=220955178807&proxyReferer=https:%2F%2Fwww.google.com%2F)  
 각 노드가 데이터와 포인터를 가지고 한 줄로 연결되어 있는 방식으로, 데이터를 저장하는 자료 구조.  
-데이터를 담고 있는 노드들이 연결되어 있는데, 노드의 포인터가 다음이나 이전 노드와의 연결을 담당한다.  
-※ [이해에 도움된 블로그](https://m.blog.naver.com/PostView.nhn?blogId=lghlove0509&logNo=220955178807&proxyReferer=https:%2F%2Fwww.google.com%2F)
+데이터를 담고 있는 노드들이 연결되어 있는데, 노드의 포인터가 다음이나 이전 노드와의 연결을 담당한다.
 </div>
 
 정처기 공부한다고 뜻하지 않게 C언어로도 알고리즘을 접한다ㅋㅋㅋ 파이썬은 커녕 자바로도 알고리즘까진 안배웠었는데...  
 사실 아직 코드가 완벽하게 이해되지 않은 듯. 알고리즘 공부할 때 더 확실히 익혀둬야겠다.  
-그리고... 18년 3회 문제 난이도 무엇... 이 때 실기 봤으면 멘탈 너덜너덜해졌을 듯(사실 18년 3회때 필기 붙었었던 사람)
+그리고... 18년 3회 문제 난이도 무엇... 이 때 실기 봤으면 멘탈 너덜너덜해졌을 듯
 {: .notice--danger}
