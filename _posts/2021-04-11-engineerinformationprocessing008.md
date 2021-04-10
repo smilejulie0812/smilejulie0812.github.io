@@ -92,7 +92,7 @@ main(){
 main(){
 	int i,j;
 	for(i=1; i<=5; i++){				// 문제가 1~5까지의 정수에 대해 약수를 구하는 문제이고
-		printf("%d의 약수: ", i);			// ㄱ) 변수 i의 쓰임을 보니 약수를 구하는 대상 숫자를 뜻하는 것임
+		printf("%d의 약수: ", i);		// ㄱ) 변수 i의 쓰임을 보니 약수를 구하는 대상 숫자를 뜻하는 것임
 
 		for(j=1; j<=5; j++){			// 전체적인 흐름을 보면 변수 j는 i의 약수인지를 판별하여 출력하는 수치이므로
 			if( i % j == 0 )		// i에 j를 나누어 나머지가 0인지(j가 i의 약수인지)를 판별하는 조건문을 만들어줘야 함
@@ -130,12 +130,11 @@ main(){
 		printf("[%d] = $d\n", i+1, hist[i] );	//i+1은 주사위 눈(1~6)이고, hist[i]는 주사위 눈에 해당하는 히스토그램에 쌓인 각 눈이 나온 횟수를 의미한다
 }
 ```
->
+
+<div class="notice--info" markdown="1">
 **rand()**: 랜덤 숫자를 대입하는 함수  
 **srand(time(NULL))**: 1초 단위로 매번 다른 시드값을 생성하여 rand() 함수를 호출하는 함수  
 **hist[]**: 히스토그램 그리는 함수
-<div class="notice--info" markdown="1">
-
 </div>
 
 #### 2018년 3회
@@ -193,9 +192,9 @@ main(){
 **연결 리스트(Linked List)**:  
 각 노드가 데이터와 포인터를 가지고 한 줄로 연결되어 있는 방식으로, 데이터를 저장하는 자료 구조.  
 데이터를 담고 있는 노드들이 연결되어 있는데, 노드의 포인터가 다음이나 이전 노드와의 연결을 담당한다.  
+※ [이해에 도움된 블로그](https://m.blog.naver.com/PostView.nhn?blogId=lghlove0509&logNo=220955178807&proxyReferer=https:%2F%2Fwww.google.com%2F)
 </div>
 
 정처기 공부한다고 뜻하지 않게 C언어로도 알고리즘을 접한다ㅋㅋㅋ 파이썬은 커녕 자바로도 알고리즘까진 안배웠었는데...  
-그리고 사실 아직 코드가 완벽하게 이해되지 않은 듯. 알고리즘 공부할 때 더 확실히 익혀둬야겠다.  
-※ [이해에 도움된 블로그](https://m.blog.naver.com/PostView.nhn?blogId=lghlove0509&logNo=220955178807&proxyReferer=https:%2F%2Fwww.google.com%2F)
+그리고 사실 아직 코드가 완벽하게 이해되지 않은 듯. 알고리즘 공부할 때 더 확실히 익혀둬야겠다.
 {: .notice--danger}
