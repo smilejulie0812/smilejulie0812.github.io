@@ -196,5 +196,6 @@ main(){
 </div>
 
 정처기 공부한다고 뜻하지 않게 C언어로도 알고리즘을 접한다ㅋㅋㅋ 파이썬은 커녕 자바로도 알고리즘까진 안배웠었는데...  
-그리고 사실 아직 코드가 완벽하게 이해되지 않은 듯. 알고리즘 공부할 때 더 확실히 익혀둬야겠다.
+그리고 사실 아직 코드가 완벽하게 이해되지 않은 듯. 알고리즘 공부할 때 더 확실히 익혀둬야겠다.  
+※ [이해에 도움된 블로그](https://m.blog.naver.com/PostView.nhn?blogId=lghlove0509&logNo=220955178807&proxyReferer=https:%2F%2Fwww.google.com%2F)
 {: .notice--danger}
