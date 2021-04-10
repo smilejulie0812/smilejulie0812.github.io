@@ -84,6 +84,7 @@ public class Problem{
 
 <div class="notice--info" markdown="1">
 이런 문제같은 경우는 변수별로 표를 만들어서 확인하는 게 최고임
+<html>
 |:--------:|:--------:|:--------:|:--------:|
 | **i** | 3 | 4 | 5 |
 | **a** | 1 | 1 | 2 |
@@ -92,4 +93,5 @@ public class Problem{
 | **sum** | 4 | 7 | 12 |
 | **a(next)** | 1 | 2 | 3 |
 | **b(next)** | 2 | 3 | 5 |
+</html>
 </div>
