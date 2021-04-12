@@ -38,10 +38,9 @@ Docker를 실행할 경우에는 **Hyper-V mode**를 활성화하여 HW와 OS �
 WSL이나 Docker와 워크스테이션을 병행하여 사용하고자 하는 사람들에게는 꽤 희소식이 아닐 수 없다(나도 기존에 WSL을 사용하고 있기도 했고, 나중에 Docker 이미지로 fedora를 사용해보고 싶은 욕심도 있었기 때문에 여러모로 도움이 되었다).
 
 그리하여 최종적으로 Workstation에서 설치한 CentOS7. 반갑다 반가워!
-(원래 리눅스의 제맛은 CLI라고 생각해서 X-windows는 별로 내키지 않아하는 1인이나 리눅스마스터 실기 공부를 위해...)
 
-```html
-{% raw %}<img src="smilejulie0812.github.io/assets/images/visualization001-1.PNG" alt="">{% endraw %}
-```
 
+{% raw %}<img src="https://smilejulie0812.github.io/assets/images/visualization001-1.PNG" alt="">{% endraw %}
+
+(원래 리눅스의 제맛은 CLI라고 생각해서 X-windows는 별로 내키지 않아하는 1인이나 리눅스마스터 실기 공부를 위해...)  
 Workstation엔 CentOS7, WSL엔 Ubuntu. 마음이 든든하다. 이제 Docker로 fedora 환경까지 만들면(최신으로 설치해서 CentOS8용 명령어 같은 거 시험해보고 싶다) 가볍게 뛰놀 수 있을만한 리눅스 OS는 대강 갖춰두는 건가.
