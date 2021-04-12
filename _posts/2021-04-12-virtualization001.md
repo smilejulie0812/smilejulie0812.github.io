@@ -42,5 +42,6 @@ WSL이나 Docker와 워크스테이션을 병행하여 사용하고자 하는 �
 
 {% raw %}<img src="https://smilejulie0812.github.io/assets/images/visualization001-1.PNG" alt="">{% endraw %}
 
-(원래 리눅스의 제맛은 CLI라고 생각해서 X-windows는 별로 내키지 않아하는 1인이나 리눅스마스터 실기 공부를 위해...)  
+(원래 리눅스의 제맛은 CLI라고 생각해서 X-windows는 별로 내키지 않아하는 1인이나 리눅스마스터 실기 공부를 위해...)
+
 Workstation엔 CentOS7, WSL엔 Ubuntu. 마음이 든든하다. 이제 Docker로 fedora 환경까지 만들면(최신으로 설치해서 CentOS8용 명령어 같은 거 시험해보고 싶다) 가볍게 뛰놀 수 있을만한 리눅스 OS는 대강 갖춰두는 건가.
