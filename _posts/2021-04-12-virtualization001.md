@@ -6,8 +6,6 @@ categories:
 tags:
   - VMware Workstation Player
   - Docker Desktop for Windows
-  - Oracle VM VirtualBox
-  - Windows Subsystem for Linux
 sidebar:
   nav: "docs"
 ---
