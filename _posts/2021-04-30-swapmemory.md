@@ -55,9 +55,10 @@ sidebar:
 ## 기타 Swap 관련 명령어
 
 #### free 명령어
-물리 메모리나 스왑 메모리 등, 메모리의 상태를 출력하기 위해 사용하는 명령어가 **free 명령어**이다.
+물리 메모리나 스왑 메모리 등, 메모리의 상태를 출력하기 위해 사용하는 명령어가 **free 명령어**이다.  
+<div class="notice--primary" markdown="1">
 \# free
-{: .notice--primary}
+</div>
 
 #### 스왑 파일을 해제할 때
 \# swapoff -v /swapfile
@@ -76,14 +77,14 @@ Elasticsearch야말로 메모리 상에서 많은 양의 데이터를 다루며 
 
 #### 1. sysctl 명령어를 사용하여 스와핑 무효화
 실제 프로젝트에서 사용한 방법이다. elasticsearch 전용 서버이므로 평상시에는 스와핑을 제어하지만, 응급 메모리 상황에서는 OS가 스와핑 기능을 사용할 수 있도록 설정하였다.  
+<div class="notice--primary" markdown="1">
 \# sysctl -w vm.swappiness = 1  
-{: .notice--primary}
+</div>
 OR  
 <div class="notice--primary" markdown="1">
-sudo vi /etc/sysctl.conf  
+\# sudo vi /etc/sysctl.conf  
 vm.swappiness=1  
-sysctl -p
-\# 
+\# sysctl -p
 </div>
 참고) vm.swappiness = 0 으로 설정하면 일부 커널에서 되려 OOM-killer를 불러와서 elasticsearch 프로세스를 kill 해버릴 수 있다고 한다(...)
 
