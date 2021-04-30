@@ -4,7 +4,7 @@ excerpt_separator: "<!--more-->"
 categories:
   - Certificate
 tags:
-  - SQLDeveloper
+  - SQL개발자
 sidebar:
   nav: "docs"
 ---
