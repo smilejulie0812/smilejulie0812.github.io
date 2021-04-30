@@ -86,7 +86,8 @@ OR
 vm.swappiness=1  
 \# sysctl -p
 </div>
-참고) vm.swappiness = 0 으로 설정하면 일부 커널에서 되려 OOM-killer를 불러와서 elasticsearch 프로세스를 kill 해버릴 수 있다고 한다(...)
+※ vm.swappiness = 0 으로 설정하면 일부 커널에서 되려 OOM-killer를 불러와서 elasticsearch 프로세스를 kill 해버릴 수 있다고 한다(...)
+※ OOM-Killer란? Out Of Memory Killer의 줄임말로, 메모리가 부족할 시 그 원인이 되는 프로세스를 강제로 종료시키는 리눅스 커널의 작업을 뜻한다.
 
 #### 2. 영구적인 스와핑 무효화
 \# swapoff - a  
