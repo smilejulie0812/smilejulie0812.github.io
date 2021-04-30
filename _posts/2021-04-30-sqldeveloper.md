@@ -7,10 +7,7 @@ tags:
   - SQLDeveloper
 sidebar:
   nav: "docs"
-toc: true
-toc_sticky: true
 ---
-## 서론
 정보처리기사 공부를 하면서 곁다리(...)로 준비한 두 번째 자격증이다. 인프라 엔지니어가 뜬금없이 SQL 자격증이라니 싶기도 하겠지만, ELK Stack을 사랑하는 나로서는 NoSQL에서 벗어나 정석적인 RDBMS의 세계에 발을 담궈보고 싶었던 것이다. 그게 아니더라도 DB 서버 구축 시에는 간단한 SQL문으로 테스트를 하는 경우도 종종 있고, 고객사에 따라서는 가장 기본적인 테이블 생성이나 권한 부여 정도까지 부탁하는 경우도 있고... 참, zabbix 인스톨 시에도 아주 간단한 SQL은 다룬다. 이런 이유들을 계기로 어디 가서 SQL 생기초는 압니다, 한 마디는 해 보고 싶다는 생각에 준비한 자격증이 바로 **SQL 개발자, 통칭 SQLD**이다.
 
 {% raw %}<img src="https://smilejulie0812.github.io/assets/images/sqldeveloper-1.jpg" alt="">{% endraw %}  
