@@ -43,7 +43,7 @@ sidebar:
 \# swapon /swapfile
 {: .notice--primary}
 
-#### 스왑 상테 확인하기
+#### 스왑 상태 확인하기
 \# swapon -s
 {: .notice--primary}
 
