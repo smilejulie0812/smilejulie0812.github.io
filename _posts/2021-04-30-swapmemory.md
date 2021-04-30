@@ -56,6 +56,8 @@ sidebar:
 
 #### free 명령어
 물리 메모리나 스왑 메모리 등, 메모리의 상태를 출력하기 위해 사용하는 명령어가 **free 명령어**이다.
+\# free
+{: .notice--primary}
 
 #### 스왑 파일을 해제할 때
 \# swapoff -v /swapfile
@@ -73,15 +75,16 @@ Elasticsearch야말로 메모리 상에서 많은 양의 데이터를 다루며 
 이를 방지하기 위해, Elasticsearch에서는 다음의 세 가지 방법으로 스와핑을 중지하도록 추천한다.
 
 #### 1. sysctl 명령어를 사용하여 스와핑 무효화
-실제 프로젝트에서 사용한 방법이다. elasticsearch 전용 서버이므로 평상시에는 스와핑을 제어하지만, 응급 메모리 상황에서는 OS가 스와핑 기능을 사용할 수 있도록 설정하였다.
+실제 프로젝트에서 사용한 방법이다. elasticsearch 전용 서버이므로 평상시에는 스와핑을 제어하지만, 응급 메모리 상황에서는 OS가 스와핑 기능을 사용할 수 있도록 설정하였다.  
 \# sysctl -w vm.swappiness = 1  
 {: .notice--primary}
 OR  
+<div class="notice--primary" markdown="1">
 sudo vi /etc/sysctl.conf  
 vm.swappiness=1  
 sysctl -p
 \# 
-{: .notice--primary}
+</div>
 참고) vm.swappiness = 0 으로 설정하면 일부 커널에서 되려 OOM-killer를 불러와서 elasticsearch 프로세스를 kill 해버릴 수 있다고 한다(...)
 
 #### 2. 영구적인 스와핑 무효화
@@ -91,12 +94,14 @@ sysctl -p
 
 #### 3. elasticsearch.yml 내에서 부분적으로 스와핑 무효화
 내 경우에는 서버 관리자 권한을 가지고 있었기 때문에 OS 측에서 설정이 가능했지만, 혹시 root 유저 사용이 불가능하거나 sudo 명령어를 사용할 수 없는 경우, `elasticsearch.yml` 내의 설정을 통해 elasticsearch 움직임에 한해서 스와핑 기능을 무효화할 수 있다.
-즉, JVM 자체에 설정하여, elasticsearch가 기동할 때 할당된 메모리를 lock한 상태로 기동해서 스와핑 기능을 사용하지 못하도록 설정하는 것이다.
+즉, JVM 자체에 설정하여, elasticsearch가 기동할 때 할당된 메모리를 lock한 상태로 기동해서 스와핑 기능을 사용하지 못하도록 설정하는 것이다.  
+<div class="notice--primary" markdown="1">
 bootstrap.mlockall: true # 버전 2 이상  
 bootstrap.memory_lock: true # 버전 5 이상
-{: .notice--primary}
+</div>
 
-Elasticsearch에 대해서는 웬만한 엔지니어보다 잘 알고 있다고 자부했지만 사실은 속빈 강정이었다는 사실을 깨닫게 되었다. 하지만 역시 이렇게 공부하는 건 너무나도 재밌어... 앞으로 기술 블로그를 통해, 내 4년 간의 커리어를 확실히 채워나가도록 노력해야지.
+Elasticsearch에 대해서는 웬만한 엔지니어보다 잘 알고 있다고 자부했지만 사실은 속빈 강정이었다는 사실을 깨닫게 되었다.   
+하지만 역시 이렇게 공부하는 건 너무나도 재밌어... 앞으로 기술 블로그를 통해, 내 4년 간의 커리어를 확실히 채워나가도록 노력해야지.
 
 #### 참고 페이지
 * [Swapping Is the Death of Performance](https://www.elastic.co/guide/en/elasticsearch/guide/current/heap-sizing.html#_swapping_is_the_death_of_performance)
