@@ -77,11 +77,6 @@ export ES_HEAP_SIZE=30.5g
 ES_JAVA_OPTS="-Xms2g -Xmx2g" ./bin/elasticsearch
 ```
 
-#### 사담...
-<span style="color:gray">사실 SIEM 프로젝트에 참여했을 때, Data node(Hot, Warm node 다)에 대해서는 진짜 터무니없는 힙 사이즈를 설정할 수밖에 없었다(막 64g 128g 이랬음...). 물론 32g 미만 설정이 권장사항임은 잘 알고 있었으나, 매일을 대용량 로그가 흘러들어오던 시스템을 32g로 맞췄다간 시종일관 OOM로 움직이지도 않을 것이기 때문...(실제로 이거 때문에 과거 로그를 억지로 저장시킨 적이 한 두번이 아니었음)  
-[Elastic 공식 가이드](https://www.elastic.co/guide/en/elasticsearch/guide/current/heap-sizing.html#_just_how_far_under_32gb_should_i_set_the_jvm)에서 제안하는 것처럼 노드를 늘려서 사용하는 것을 생각하지 않은 것도 아니나(아니 절실하게 그렇게 하고 싶었던 나날들...), 그만큼 라이선스가 필요하고, 라이선스를 사려면 돈이 필요하고(...) 고객사는 더 이상 라이선스를 구매할 수 없다고 하니 엔지니어 속이 타들어가요 안타들어가요...  
-그래서 야금야금 사이즈를 늘려가며 성능 테스트를 거친 결과가 위의 64g 128g인 것이다. 불안하기는 했지만, 퇴사 전까지 큰 문제 없이 움직여줬으니 소임은 다한 거겠지.</span>
-
 #### 참고 페이지
 * [Heap: Sizing and Swapping](https://www.elastic.co/guide/en/elasticsearch/guide/current/heap-sizing.html#heap-sizing)
 * [Advanced configuration](https://www.elastic.co/guide/en/elasticsearch/reference/current/advanced-configuration.html#set-jvm-heap-size)
