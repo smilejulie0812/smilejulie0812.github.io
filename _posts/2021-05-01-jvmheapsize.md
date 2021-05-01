@@ -15,18 +15,18 @@ sidebar:
 
 ## JVM Memory에 대해 설명하시오
 OS 상에는 다양한 프로그램과 어플리케이션이 실행되고, 그 중 많은 프로그램이 Java로 이루어진 Java 어플리케이션일 것이다. 그런데, 이 Java 어플리케이션은 단순히 OS 위에서 돌아가는 것이 아니다. 
-OS로부터 Java 어플리케이션을 실행시킬 메모리를 할당받아서 해당 Java 어플리케이션이 실제로 실행되는 공간, 즉 Java 어플리케이션과 OS 사이에서 중계자 역할을 해 주는 곳이 바로 JVM(Java Virtual Machine)이다. 
-그리고, **JVM이 Java 어플리케이션을 위해 OS로부터 할당받는 메모리가 JVM Memory**인 것이다.
+OS로부터 Java 어플리케이션을 실행시킬 메모리를 할당받아서 해당 Java 어플리케이션이 실제로 실행되는 공간, 즉 Java 어플리케이션과 OS 사이에서 중계자 역할을 해 주는 곳이 바로 JVM(Java Virtual Machine)이 필요하다. 
+그리고, **JVM이 Java 어플리케이션을 실행하기 위해 OS로부터 할당받는 메모리가 JVM Memory**인 것이다.
 
 <div class="notice--info" markdown="1">
-**<JVM, JRE, JDK 의 의미>**  
+**JVM, JRE, JDK 의 의미**  
 * **JDK** = JRE + 개발에 필요한 툴  
 * **JRE** = JVM + 필요한 라이브러리 = Java 어플리케이션의 실행을 위한 최소 단위  
 * **JVM** = OS로부터 Java 어플리케이션을 실행시키기 위한 표준
 </div>
 
 ## JVM Memory의 구조를 알아야 Java heap size를 이해한다
-JVM Memory의 정의를 알았으니, 이번에는 구조를 알아보자. 
+JVM Memory의 정의를 알았으니, 이번에는 그 구조를 알아보자. 
 다만 이 포스팅은 JVM memory의 상세한 구조와 움직임을 파악하려는 것이 아니라 heap size가 무엇인지, 어떤 영향을 주는지 정도를 다룰 것이기 때문에, 이해하기에 필요한 내용만을 픽업해서 적어볼 생각이다.
 
 <구조 그림(추가 예정)>
