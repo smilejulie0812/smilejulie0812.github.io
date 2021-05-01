@@ -48,17 +48,17 @@ JVM Memory는 기능에 따라 크게 세 부분으로 나뉘는데, Runtime Dat
 위에서 Heap Area에 저장되어 있는 객체 중 사용되지 않는 객체가 있을 경우 Garbage Collector에 의해 제거된다고 언급했었다. 이 때 Heap Size를 크게 설정한다는 것은 사용되지 않는 객체 또한 저장할 크기가 커진다는 의미이기 때문에, 그만큼 GC가 Heap Area에 관여하는 시간 또한 늘어난다. 즉, Full GC※1의 시간이 증가하고, 그 결과 전체적인 성능이 저하되는 현상이 나타나게 된다. 그러므로 무작정 Heap Size를 늘리기보다는 클러스터링, 로드밸런서 등의 방법을 사용하여 가용성을 확보하는 것이 중요하다.  
 한편 Heap Size를 작게 설정한다면 어떻게 될까? 반대로 다루어야 하는 객체를 저장할 공간이 부족해지므로, OOME※2 현상이 발생하게 될 것이다. 그러므로, ~~개복치~~ Java Heap Size을 적절한 크기로 조정하는 것은 매우 중요한 설정이 된다.  
 <div class="notice--info" markdown="1">
-※1 Full GC: Heap Area 전체를 clear하는 작업  
-※2 OOME: OutofMemory Error의 준말로, Heap Area에서 관리할 수 있는 용량보다 더 많은 Heap size를 요청할 때 생기는 에러
+※1 **Full GC**: Heap Area 전체를 clear하는 작업  
+※2 **OOME**: OutofMemory Error의 준말로, Heap Area에서 관리할 수 있는 용량보다 더 많은 Heap size를 요청할 때 생기는 에러
 </div>
 
 ## 그럼 ES에서 Java Heap Size는 어떻게 설정할까?
 이전 포스팅에서도 말했지만, Elastic Stack은 대용량 트래픽을 관리하는 프로그램이므로 메모리 설정이 굉장히 중요하다. 이 Java Heap Size 역시 메모리와 전체 성능에 지대한 영향을 끼치는 설정이므로, Elastic Stack을 인스톨하는 초기 설정에서부터 이를 고려해 주어야 한다.
 
 그렇다면 Elastic Stack 기동을 위해 Java Heap Size를 설정할 때에는 무엇을 고려해야 할까?
-* 일반적으로 Java Heap Size는 RAM의 절반을 설정한다.
-* Elastic Stack에서 Java Heap Size는 31GB 미만으로 설정한다.
-* Xms와 Xmx의 크기는 동일하게 설정한다.
+* 일반적으로 **Java Heap Size는 RAM의 절반**을 설정한다.
+* Elastic Stack에서 **Java Heap Size는 31GB 미만**으로 설정한다.
+* **Xms와 Xmx의 크기는 동일**하게 설정한다.
 
 #### Java Heap Size는 RAM의 절반을 설정한다
 이유는 간단하다. RAM의 절반 이상을 Java Heap Size로 할당해 버리면, 상대적으로 Lucene이 사용할 메모리가 적어서 그 결과가 성능 저하로 이어지기 때문이다. 그러니 heap size는 RAM의 절반 정도를 설정하는 것으로 생각해 두자.
