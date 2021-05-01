@@ -15,8 +15,8 @@ sidebar:
 
 ## JVM Memory에 대해 설명하시오
 OS 상에는 다양한 프로그램과 어플리케이션이 실행되고, 그 중 많은 프로그램이 Java로 이루어진 Java 어플리케이션일 것이다. 그런데, 이 Java 어플리케이션은 단순히 OS 위에서 돌아가는 것이 아니다. 
-OS로부터 Java 어플리케이션을 실행시킬 메모리를 할당받아서 해당 Java 어플리케이션이 실제로 실행되는 공간, 즉 Java 어플리케이션과 OS 사이에서 중계자 역할을 해 주는 곳이 바로 JVM(Java Virtual Machine)이 필요하다. 
-그리고, **JVM이 Java 어플리케이션을 실행하기 위해 OS로부터 할당받는 메모리가 JVM Memory**인 것이다.
+OS로부터 Java 어플리케이션을 실행시킬 메모리를 할당받아서 해당 Java 어플리케이션이 실제로 실행되는 공간, 즉 Java 어플리케이션과 OS 사이에서 중계자 역할을 해 주는 곳이 바로 JVM(Java Virtual Machine)이 필요한 것이다. 
+그리고, **JVM이 Java 어플리케이션을 실행하기 위해 OS로부터 할당받는 메모리가 JVM Memory**이다.
 
 <div class="notice--info" markdown="1">
 **JVM, JRE, JDK 의 의미**  
@@ -71,7 +71,7 @@ export ES_HEAP_SIZE=30.5g
 ```
 
 #### Xms와 Xmx의 크기는 동일하게 설정한다
-최소 힙 사이즈(xms)와 최대 힙 사이즈(xmx)를 동일하게 해 주는 이유는, 런타임이 일어날 때 heap size가 늘어났다 줄어들었다 하는 과정에서 성능이 저하되는 것을 막기 위해서이다. 웬만하면 같게 맞춰주자.
+최소 힙 사이즈(Xms)와 최대 힙 사이즈(Xmx)를 동일하게 해 주는 이유는, 런타임이 일어날 때 heap size가 늘어났다 줄어들었다 하는 과정에서 성능이 저하되는 것을 막기 위해서이다. 웬만하면 같게 맞춰주자.
 
 ```yml
 ES_JAVA_OPTS="-Xms2g -Xmx2g" ./bin/elasticsearch
