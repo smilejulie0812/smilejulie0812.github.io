@@ -19,7 +19,7 @@ OS로부터 Java 어플리케이션을 실행시킬 메모리를 할당받아서
 그리고, **JVM이 Java 어플리케이션을 위해 OS로부터 할당받는 메모리가 JVM Memory**인 것이다.
 
 <div class="notice--info" markdown="1">
-##<JVM, JRE, JDK 의 의미>  
+**<JVM, JRE, JDK 의 의미>**  
 * **JDK** = JRE + 개발에 필요한 툴  
 * **JRE** = JVM + 필요한 라이브러리 = Java 어플리케이션의 실행을 위한 최소 단위  
 * **JVM** = OS로부터 Java 어플리케이션을 실행시키기 위한 표준
