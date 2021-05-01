@@ -29,7 +29,7 @@ OS로부터 Java 어플리케이션을 실행시킬 메모리를 할당받아서
 JVM Memory의 정의를 알았으니, 이번에는 그 구조를 알아보자. 
 다만 이 포스팅은 JVM memory의 상세한 구조와 움직임을 파악하려는 것이 아니라 heap size가 무엇인지, 어떤 영향을 주는지 정도를 다룰 것이기 때문에, 이해하기에 필요한 내용만을 픽업해서 적어볼 생각이다.
 
-<구조 그림(추가 예정)>
+{% raw %}<img src="https://smilejulie0812.github.io/assets/images/jvmheapsize-1.PNG" alt="">{% endraw %}
 
 JVM Memory는 기능에 따라 크게 세 부분으로 나뉘는데, Runtime Data Area, Garbage Collector, Execution Engine이 그것이다.
 * **Runtime Data Area**: JVM의 메모리 영역. 즉, OS로부터 메모리 공간을 할당받고 Java 어플리케이션을 실행할 때 실제로 움직이는 공간
