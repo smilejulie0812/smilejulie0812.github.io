@@ -19,10 +19,10 @@ OS로부터 Java 어플리케이션을 실행시킬 메모리를 할당받아서
 그리고, **JVM이 Java 어플리케이션을 위해 OS로부터 할당받는 메모리가 JVM Memory**인 것이다.
 
 <div class="notice--info" markdown="1">
-< JVM, JRE, JDK 의 의미>  
-* JDK = JRE + 개발에 필요한 툴  
-* JRE = JVM + 필요한 라이브러리 = Java 어플리케이션의 실행을 위한 최소 단위  
-* JVM = OS로부터 Java 어플리케이션을 실행시키기 위한 표준
+###< JVM, JRE, JDK 의 의미>  
+* **JDK** = JRE + 개발에 필요한 툴  
+* **JRE** = JVM + 필요한 라이브러리 = Java 어플리케이션의 실행을 위한 최소 단위  
+* **JVM** = OS로부터 Java 어플리케이션을 실행시키기 위한 표준
 </div>
 
 ## JVM Memory의 구조를 알아야 Java heap size를 이해한다
@@ -45,10 +45,10 @@ JVM Memory는 기능에 따라 크게 세 부분으로 나뉘는데, Runtime Dat
 
 자, 여기까지 들어오면 예상이 된다. **Java Heap Size는 바로 Heap Area의 크기**인 것이다. Java Heap Size는 사용자가 지정할 수 있는데, 프로그램이 실행되는 영역이므로 크게 설정하면 좋을 것 같지만 실상 그렇지 않다.
 
-위에서 Heap Area에 저장되어 있는 객체 중 사용되지 않는 객체가 있을 경우 Garbage Collector에 의해 제거된다고 언급했었다. 이 때 Heap Size를 크게 설정한다는 것은 사용되지 않는 객체 또한 저장할 크기가 커진다는 의미이기 때문에, 그만큼 GC가 Heap Area에 관여하는 시간 또한 늘어난다. 즉, Full GC※1의 시간이 증가하고, 그 결과 전체적인 성능이 저하되는 현상이 나타나게 된다.
-그러므로 무작정 Heap Size를 늘리기보다는 클러스터링, 로드밸런서 등의 방법을 사용하여 가용성을 확보하는 것이 중요하다. 한편 Heap Size를 작게 설정한다면 어떻게 될까? 반대로 다루어야 하는 객체를 저장할 공간이 부족해지므로, OOME※2 현상이 발생하게 될 것이다. 그러므로, 개복치 Java Heap Size을 적절한 크기로 조정하는 것은 매우 중요한 설정이 된다.  
+위에서 Heap Area에 저장되어 있는 객체 중 사용되지 않는 객체가 있을 경우 Garbage Collector에 의해 제거된다고 언급했었다. 이 때 Heap Size를 크게 설정한다는 것은 사용되지 않는 객체 또한 저장할 크기가 커진다는 의미이기 때문에, 그만큼 GC가 Heap Area에 관여하는 시간 또한 늘어난다. 즉, Full GC※1의 시간이 증가하고, 그 결과 전체적인 성능이 저하되는 현상이 나타나게 된다. 그러므로 무작정 Heap Size를 늘리기보다는 클러스터링, 로드밸런서 등의 방법을 사용하여 가용성을 확보하는 것이 중요하다.  
+한편 Heap Size를 작게 설정한다면 어떻게 될까? 반대로 다루어야 하는 객체를 저장할 공간이 부족해지므로, OOME※2 현상이 발생하게 될 것이다. 그러므로, ~~개복치~~ Java Heap Size을 적절한 크기로 조정하는 것은 매우 중요한 설정이 된다.  
 <div class="notice--info" markdown="1">
-※1 Full GC: Heap Area 전체를 clear하는 작업
+※1 Full GC: Heap Area 전체를 clear하는 작업  
 ※2 OOME: OutofMemory Error의 준말로, Heap Area에서 관리할 수 있는 용량보다 더 많은 Heap size를 요청할 때 생기는 에러
 </div>
 
@@ -78,9 +78,9 @@ ES_JAVA_OPTS="-Xms2g -Xmx2g" ./bin/elasticsearch
 ```
 
 #### 사담...
-사실 SIEM 프로젝트에 참여했을 때, Data node(Hot, Warm node 다)에 대해서는 진짜 터무니없는 힙 사이즈를 설정할 수밖에 없었다(막 64g 128g 이랬음...). 물론 32g 미만 설정이 권장사항임은 잘 알고 있었으나, 매일을 대용량 로그가 흘러들어오던 시스템을 32g로 맞췄다간 시종일관 OOM로 움직이지도 않을 것이기 때문...(실제로 이거 때문에 과거 로그를 억지로 저장시킨 적이 한 두번이 아니었음)
-[Elastic 공식 가이드](https://www.elastic.co/guide/en/elasticsearch/guide/current/heap-sizing.html#_just_how_far_under_32gb_should_i_set_the_jvm)에서 제안하는 것처럼 노드를 늘려서 사용하는 것을 생각하지 않은 것도 아니나(아니 절실하게 그렇게 하고 싶었던 나날들...), 그만큼 라이선스가 필요하고, 라이선스를 사려면 돈이 필요하고(...) 고객사는 더 이상 라이선스를 구매할 수 없다고 하니 엔지니어 속이 타들어가요 안타들어가요...
-그래서 야금야금 사이즈를 늘려가며 성능 테스트를 거친 결과가 위의 64g 128g인 것이다. 불안하기는 했지만, 퇴사 전까지 큰 문제 없이 움직여줬으니 소임은 다한 거겠지.
+<span style="color:gray">사실 SIEM 프로젝트에 참여했을 때, Data node(Hot, Warm node 다)에 대해서는 진짜 터무니없는 힙 사이즈를 설정할 수밖에 없었다(막 64g 128g 이랬음...). 물론 32g 미만 설정이 권장사항임은 잘 알고 있었으나, 매일을 대용량 로그가 흘러들어오던 시스템을 32g로 맞췄다간 시종일관 OOM로 움직이지도 않을 것이기 때문...(실제로 이거 때문에 과거 로그를 억지로 저장시킨 적이 한 두번이 아니었음)  
+[Elastic 공식 가이드](https://www.elastic.co/guide/en/elasticsearch/guide/current/heap-sizing.html#_just_how_far_under_32gb_should_i_set_the_jvm)에서 제안하는 것처럼 노드를 늘려서 사용하는 것을 생각하지 않은 것도 아니나(아니 절실하게 그렇게 하고 싶었던 나날들...), 그만큼 라이선스가 필요하고, 라이선스를 사려면 돈이 필요하고(...) 고객사는 더 이상 라이선스를 구매할 수 없다고 하니 엔지니어 속이 타들어가요 안타들어가요...  
+그래서 야금야금 사이즈를 늘려가며 성능 테스트를 거친 결과가 위의 64g 128g인 것이다. 불안하기는 했지만, 퇴사 전까지 큰 문제 없이 움직여줬으니 소임은 다한 거겠지.</span>
 
 #### 참고 페이지
 * [Heap: Sizing and Swapping](https://www.elastic.co/guide/en/elasticsearch/guide/current/heap-sizing.html#heap-sizing)
