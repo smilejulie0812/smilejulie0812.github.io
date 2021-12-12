@@ -1,4 +1,4 @@
----
+ ---
 title: "Kafka 오리엔테이션"
 excerpt_separator: "<!--more-->"
 categories:
@@ -57,6 +57,7 @@ Broker 에 저장된 Topic 내의 Message 를 Publishing 하고 Subscripting 하
 카프카를 설치할 때 알아두면 좋은 내용을 간단하게 작성한다.
 
 ### 포트 번호
+
 |Solution|Port Number|Remarks|
 |------|---|---|
 |Zookeepr|TCP/2181|-|
