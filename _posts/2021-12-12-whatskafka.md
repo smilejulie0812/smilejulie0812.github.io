@@ -62,7 +62,7 @@ Broker 에 저장된 Topic 내의 Message 를 Publishing 하고 Subscripting 하
 |Zookeepr|TCP/2181|-|
 |Kafka|TCP/9092|-|
 |Kafka Manager|TCP/9000(Web), TCP/9999(Node간)|-|
-|JMX|38080|Manage 쪽에서 보는 포트번호<이 부분 설명 추가>|
+|JMX|38080|Manage 쪽에서 보는 포트번호 "이 부분 설명 추가"|
 
 ### Partition 관리
 Kafka 역시 메시지를 보관할 때 Shard 단위(**Partition**)로 분산하여 저장하기 때문에 성능 및 안정성이 높다.  
