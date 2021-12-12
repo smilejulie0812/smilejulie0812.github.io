@@ -20,7 +20,7 @@ sidebar:
 Apache Kakfa(이하 카프카)의 특징은 다음과 같다.
 * Cluster 구성(카프카에서는 이를 '앙상블'이라 부른다)으로 분산처리가 가능
 * **Publising - Subscription 구조** : Pub/Sub 구조
-* Logback 기능 <이 부분 추가>
+* Logback 기능 "이 부분 추가"
 
 ### Pub/Sub 구조
 Pub/Sub 구조 내에서 Publisher 와 Consumer 는 서로의 존재에 대해 전혀 알지 못한다(그보다는 알 필요가 없다는 것이 정확할 듯).  
@@ -35,7 +35,7 @@ Broker 에 저장된 Topic 내의 Message 를 Publishing 하고 Subscripting 하
 * Google Cloud Pub/Sub
 
 ## Kafka 구성
-<그림 추가>  
+"그림 추가"  
 카프카에서 중요한 용어가 바로 **Topic**과 **Message**이다.  
 * Topic : 카프카의 데이터를 분류하는 단위로, Elasticsearch 의 인덱스와 비슷한 개념이라 할 수 있다.
 * Message : 카프카로 보내지고, 카프카에 보관되고, 카프카에서 꺼내어져가는 데이터로,  Elasticsearch 의 Document, Data 와 비슷한 개념이라 할 수 있다.
@@ -72,13 +72,13 @@ Kafka 역시 메시지를 보관할 때 Shard 단위(**Partition**)로 분산하
 ### Java Heap Memory
 Kafka 는 Java 기반의 솔루션이므로 JVM 메모리 계산이 중요하다.  
 일반적으로 Kafka : OS 의 힙 메모리 비율은 1 : 2 로. Kafka : Zookeeper 을 2 : 1 로 한다.  
-예를 들어, 8G 메모리의 서버에 카프카와 주키퍼를 함께 올릴 때, 카프카 2G 주키퍼 1G 정도의 설정을 준다고 한다. <이유 설명 추가>
+예를 들어, 8G 메모리의 서버에 카프카와 주키퍼를 함께 올릴 때, 카프카 2G 주키퍼 1G 정도의 설정을 준다고 한다. "이유 설명 추가"
 
 ### Thread
 컨슈머의 수는 브로커 서버의 CPU Therad 수와 같게 설정하는 것이 최적이지만, 이는 CPU 의 낭비가 심하기 때문에 보통 배수로 맞춰준다.
 
 ## Offset, Lag 관계
-<그림 추가>  
+"그림 추가"  
 퍼블리싱된 메시지는 설정에 맞게 지정된 토픽에 저장된다.  
 각각의 토픽은 Partition 으로 분산되어 저장되고, 각 파티션에서 한 단위의 메시지가 저장되는 공간의 단위를 Log 라 부른다.  
 즉, 메시지는 한 칸의 로그에 자동으로 append 되어 저장되는 방식인 것이다.
