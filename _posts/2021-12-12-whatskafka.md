@@ -1,4 +1,4 @@
- ---
+---
 title: "Kafka 오리엔테이션"
 excerpt_separator: "<!--more-->"
 categories:
