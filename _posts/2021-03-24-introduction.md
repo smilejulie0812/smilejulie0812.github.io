@@ -16,8 +16,8 @@ IT 인프라 구축 및 운영 업무를 담당하는 **시스템 엔지니어**
 
 ## SKILL SET
 * **Monitoring**: Elastic Stack(Elasticsearch, Logstash, Kibana)
-* * **Tool**: Kafka, Ansible, Redis, Docker
-* * **Script Language**: Shell(Bash), PowerShell, Python
+* **Tool**: Kafka, Ansible, Redis, Docker
+* **Script Language**: Shell(Bash), PowerShell, Python
 * **OS**: Linux(Ubuntu, CentOS, RHEL), Windows
 * **Atmosphere** : VMware vSphere, AWS
 
