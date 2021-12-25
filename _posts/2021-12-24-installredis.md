@@ -116,14 +116,45 @@ sudo useradd -s /sbin/nologin -M -g <그룹명> <유저명>
 
 ### conf 설정
 
+### 서비스 시작 및 종료 스크립트 작성
+Redis 는 서비스 시작 및 종료를 위한 명령어 없이 프로세스 단위로 다루기 때문에, 시작과 종료를 위한 간단한 스크립트를 작성해 두면 편리하다.  
+#### 서비스 시작 스크립트
+* start-redis.conf
+```bash
+#!/bin/sh -
+/redis/redis-6.0.9/src/redis-server /redis/redis-6.0.9/redis.conf
+```
+#### 서비스 종료 스크립트
+* stop-redis.conf
+```bash
+#!/bin/sh -
+/redis/redis-6.0.9/src/redis-cli -p 6379 shutdown
+```
+
 ## systemd 설정
-
 ### systemd 파일 작성 및 추가
+systemd 파일을 작성하여 서비스 관리를 편하게 할 수 있다.
+* /usr/lib/systemd/system/redis.service
+```bash
+[Unit]
+Description=Redis-Server
+After=syslog.target network.target
 
+[Service]
+Type=forking
+ExecStart=/redis/redis-start.sh
+ExecStop=/redis/redis-stop.sh
+
+[Install]
+WantedBy=multi-user.target
+```
 ### 서비스 enabled 설정
+설정한 서비스를 enabled 로 하여 서버 재시작 후에도 자동으로 서비스를 시작할 수 있도록 한다.
+```bash 
+systemctl enable redis.service
+```
 
 ## 참고
-
 - [http://redisgate.jp/redis/configuration/redis_start.php](http://redisgate.jp/redis/configuration/redis_start.php)
 - [https://qiita.com/KurosawaTsuyoshi/items/f8719bf7c3a10d22a921](https://qiita.com/KurosawaTsuyoshi/items/f8719bf7c3a10d22a921)
 - [https://www.digitalocean.com/community/tutorials/how-to-install-and-secure-redis-on-ubuntu-20-04-ja](https://www.digitalocean.com/community/tutorials/how-to-install-and-secure-redis-on-ubuntu-20-04-ja)
