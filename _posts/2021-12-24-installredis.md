@@ -1,15 +1,14 @@
 ---
-title: "Redis をインストールしてみた"
+title: "Redis Cluster 설치하기"
 excerpt_separator: "<!--more-->"
 categories:
   - Redis
 tags:
   - Redis
-  - Japanese
 sidebar:
   nav: "docs"
 ---
-redis 초기 인스톨 정보를 정리한 후 일본어로 번역하는 작업
+Redis Cluster 구성을 위한 설치 방법을 정리해서 기재한다.
 
 ## 버전 정보
 
@@ -44,16 +43,21 @@ sudo sysctl -a | grep vm.overcommit_memory
 ```
 
 ### TCP Backlog 설정
-
-[https://experiences.tistory.com/18](https://experiences.tistory.com/18) ← 이 내용 이해해서 설정
+TCP 3-way handshake 과정에서 클라이언트 -> 서버 로 보낸 응답이 대기하는 장소가 Backlog Queue 인데, 이 값을 조정해줘야 응답 초과로 퍼포먼스 저하를 방지할 수 있다.
+* net.core.somaxconn : ESTABLISHED 상태의 소켓을 위한 큐
+* net.ipv4.tcp_max_syn_backlog : SYN_RECEIVED 상태의 소켓을 위한 큐
 
 ```bash
 ### Socket Max Connection 값 설정 변경
 sudo sysctl -w net.core.somaxconn=1024
+### Syn Backlog 값 설정 변경
+sysctl -w net.ipv4.tcp_max_syn_backlog=1024
 ### 서버 재시작 후에도 설정 유지
 sudo echo "net.core.somaxconn=1024" >> /etc/sysctl.conf
+sudo echo "net.ipv4.tcp_max_syn_backlog=1024" >> /etc/sysctl.conf
 ### 설정 확인
 sudo sysctl -a | grep somaxconn
+sudo sysctl -a | grep syn_backlog
 ```
 
 ### THP Disabled 설정
@@ -108,16 +112,72 @@ sudo groupadd <그룹명>
 ### 로그인 기능을 필요하지 않으므로 nologin 으로 지정
 sudo useradd -s /sbin/nologin -M -g <그룹명> <유저명>
 ```
-### 워크 디렉토리 작성
+### 작업 디렉토리 작성
+
+Redis 프로세스를 관리할 작업용 디렉토리를 생성한다(conf 파일이나 관련 로그 디렉토리 관리 등을 이 곳에서 할 수 있다).  
+※ 물론, conf 파일이나 실행/중지 스크립트 전용 디렉토리는 /etc/redis 에, 로그 전용 디렉토리를 /var/log/redis 에 보관하도록 설정하여  
+다른 debian package 솔루션과 경로를 통일하는 것도 한 가지 방법이다(여기에서는 전용 디렉토리에서 한 번에 관리하는 경로로 설정한다).
 
 ```bash
-
+### redis 전용 디렉토리 생성
+mkdir <관리할 디렉토리 경로>/redis
+### redis 로그 디렉토리 생성
+mkdir <관리할 디렉토리 경로>/redis/logs
+### 디렉토리 권한 설정
+chmod -R 755 <관리할 디렉토리 경로>/redis
+chown -R redis:redis <관리할 디렉토리 경로>/redis
 ```
 
 ### conf 설정
-
+* redis/redis.conf
 ```bash
+### 로컬 환경 뿐 아니라 모든 IP 와의 연결을 허용
+bind 0.0.0.0
 
+### RDB(Redis 의 현재 메모리에 대한 dump 생성 기능) 설정 중 save second changes 설정
+#save 900 1   ### 900초 안에 1번 이상 데이터 변경이 생길 때 RDB 생성
+#save 300 10    ### 300초 안에 10번 이상 데이터 변경이 생길 때 RDB 생성
+#save 60 10000      ### 60초 안에 10000번 이상 데이터 변경이 생길 때 RDB 생성
+save ""     ### Redis 를 캐시로서 사용하므로, RDB 생성하지 않음
+
+### systemd init 시스템을 통한 Redis 관리 허용
+supervised systemd
+
+### 클러스터 지원을 활성화
+cluster-enabled yes
+
+### 전체 메모리 중 Redis 가 최대로 사용할 크기 설정. 서버/인스턴스의 메모리 사이즈에 따라 달라진다
+maxmemory 1g
+
+### maxmemory 를 초과할 때 데이터 삭제 방식 설정
+#maxmemory-policy allkeys-lfu     ### LFU 방식으로 데이터 삭제. 캐시미스 발생시 가장 적은 빈도로 사용된 캐시를 삭제하여 공간확보
+#maxmemory-policy allkey-random   ### 랜덤 방식으로 데이터 삭제
+maxmemory-policy allkeys-lru  ### LRU 방식으로 데이터 삭제. 캐시미스 발생시 가장 마지막에 로드된 캐시를 삭제하여 공간 확보
+
+### 패스워드 설정
+requirepass <해시 암호>
+masterauth <해시 암호>
+
+### 마스터 유저명 설정 무효화 : 버전 6 Redis Cluster 구성 시에는 필히 해당 옵션을 무효화(주석처리)
+#masteruser master
+
+# 클러스터 구성 내용을 저장하는 파일명을 지정
+cluster-config-file <filename.conf>
+
+# 클러스터 노드가 실패한 것으로 간주되지 않고 사용할 수 없는 최대시간
+# 지정된 시간 이상 Master 노드에 도달 할 수 없는 경우 Slave 노드로 failover 됨
+cluster-node-timeout <milliseconds>
+
+# 클러스터 일부 노드가 다운되어도 클러스터 전체가 다운되지 않고 운영할 수 있는 여부를 선택
+cluster-require-full-coverage  <yes/no>
+
+# yes 이고 bind 가 지정되어 있으면 지정한 IP 로만 접속 가능
+# yes 이고 bind 가 지정되어 있지 않으면 127.0.0.1(로컬 환경)로만 접속 가능
+protected-mode <yes/no>
+
+# 로그 출력 설정
+dir <경로>/redis/log/
+logfile redis.log
 ```
 
 ### 서비스 시작 및 종료 스크립트 작성
@@ -163,3 +223,4 @@ systemctl enable redis.service
 - [https://qiita.com/KurosawaTsuyoshi/items/f8719bf7c3a10d22a921](https://qiita.com/KurosawaTsuyoshi/items/f8719bf7c3a10d22a921)
 - [https://www.digitalocean.com/community/tutorials/how-to-install-and-secure-redis-on-ubuntu-20-04-ja](https://www.digitalocean.com/community/tutorials/how-to-install-and-secure-redis-on-ubuntu-20-04-ja)
 - [https://www.psjco.com/26](https://www.psjco.com/26)
+- [https://experiences.tistory.com/18](https://experiences.tistory.com/18)
