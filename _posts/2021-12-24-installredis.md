@@ -131,6 +131,7 @@ chown -R redis:redis <관리할 디렉토리 경로>/redis
 
 ### conf 설정
 * redis/redis.conf
+
 ```bash
 ### 로컬 환경 뿐 아니라 모든 IP 와의 연결을 허용
 bind 0.0.0.0
