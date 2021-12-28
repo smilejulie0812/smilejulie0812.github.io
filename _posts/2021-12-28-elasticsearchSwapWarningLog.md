@@ -24,8 +24,8 @@ sidebar:
 **음수 값이 반환되는 경우가 JDK 14 버전을 기준으로 상당히 증가함에 따라 WARNING 레벨로 로그에 출력되는 경우가 매우 잦아졌다**는 것이다.
 
 다만 이 로그에 대한 특별한 조치가 필요한가 하면 그건 아니다.  
-사용 가능한 메모리나 스왑 공간 중 하나(OR)로 보고되는 통계값이 Elasticsearch 에 의해  
-0 으로 기록되고 그 영향으로 음수 값이 반환되어 출력되는 로그이지 않은가.  
+사용 가능한 메모리나 스왑 공간 중 하나(OR)로 보고되는 통계값이 Elasticsearch 에 의해 0 으로 기록되고  
+그 영향으로 음수 값이 반환되어 출력되는 로그이지 않은가.  
 굳이 사용자가 조치할 필요가 없는 로그이므로 무시하면 그만이다.
 
 Elasticsearch 의 경우 퍼포먼스를 위해 swap 영역을 일부러 잡지 않는 것을 권장받는다.  
@@ -48,7 +48,7 @@ free -h
     - JDK 14 이상으로 업그레이드하면 될 것 같은데 테스트해보지는 않았다.
     - JDK 8 의 경우 OpenJDK 8u 로 업그레이드하면 된다고 하는데!
 2. Elasticsearch 의 java 소스코드 내에서 해당 로그에 대해 WARNING 으로 출력하는 부분을 DEBUG 로 치환
-    - [https://github.com/elastic/elasticsearch/commit/acd194193a02e3ea741307ea1f05b257db1b75c7(https://github.com/elastic/elasticsearch/commit/acd194193a02e3ea741307ea1f05b257db1b75c7)
+    - [https://github.com/elastic/elasticsearch/commit/acd194193a02e3ea741307ea1f05b257db1b75c7](https://github.com/elastic/elasticsearch/commit/acd194193a02e3ea741307ea1f05b257db1b75c7)
     
 
 ### 참고
