@@ -2,10 +2,10 @@
 title: "Java Heap Size와 Elasticsearch의 관계"
 excerpt_separator: "<!--more-->"
 categories:
-  - Elastic
+  - Elasticsearch
 tags:
   - JVM
-  - elasticsearch
+  - Elasticsearch
 sidebar:
   nav: "docs"
 
