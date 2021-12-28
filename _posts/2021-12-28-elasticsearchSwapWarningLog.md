@@ -14,9 +14,9 @@ sidebar:
 
 아래의 swap 관련 로그 또한 그러한데,
 
-<aside>
+<div class="notice--primary" markdown="1">
 📢 cannot compute used swap when total swap is 0 and free swap is 0
-</aside>
+</div>
 
 이 로그가 무엇인가 하면,  
 기존 JVM 버그(situation when memory.limit_in_bytes == memory.memsw.limit_in_bytes 에서 스왑 공간을 사용하지 않는 경우의 수를 고려하지 않은 탓에  
