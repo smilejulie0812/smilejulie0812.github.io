@@ -5,6 +5,7 @@ categories:
   - Redis
 tags:
   - Redis
+  - Install
 sidebar:
   nav: "docs"
 ---
