@@ -5,6 +5,7 @@ categories:
   - Elasticsearch
 tags:
   - Elasticsearch
+  - JVM
   - Swap
 sidebar:
   nav: "docs"
