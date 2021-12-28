@@ -201,7 +201,8 @@ Redis 는 서비스 시작 및 종료를 위한 명령어 없이 프로세스 �
 ### systemd 파일 작성 및 추가
 systemd 파일을 작성하여 서비스 관리를 편하게 할 수 있다.
 * /usr/lib/systemd/system/redis.service  
-```
+
+```bash
 [Unit]
 Description=Redis-Server
 After=syslog.target network.target
