@@ -2,7 +2,7 @@
 title: "Redis 오리엔테이션"
 excerpt_separator: "<!--more-->"
 categories:
-  - Kafka
+  - Redis
 tags:
   - Redis
   - NoSQL
