@@ -1,5 +1,5 @@
 ---
-title: "Redis Cluster 설치하기"
+title: "Redis 설치하기"
 excerpt_separator: "<!--more-->"
 categories:
   - Redis
