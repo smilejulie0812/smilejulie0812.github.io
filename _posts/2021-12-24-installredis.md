@@ -80,6 +80,34 @@ vi /etc/rc.local
 echo never > /sys/kernel/mm/transparent_hugepage/enabled
 ```
 
+### Max Open Files 설정
+리눅스는 실제 파일은 물론 네트워크 및 소켓에 대한 접속의 단위가 **파일**이다(File System).
+
+OS 전체 혹은 특정 사용자에 대해 기본적으로 file 을 열 수 있는 값이 한정되어 있는데, Redis 가 대규모로 사용되는 과정에서 클라이언트의 수가 많아지거나 레디스 서버가 늘어나게 되면 아래의 이슈가 발생할 가능성이 생긴다.
+
+- redis.conf 의 설정(maxclients 값)과 OS 상의 max open files 설정값의 불일치 및 기준치 초과 이슈
+- too many open files 이슈
+
+위의 이슈를 미리 방지하기 위해 두 가지 설정을 추가한다.
+
+1. redis.conf 파일의 maxclients 값 조정 : 아래에 redis 설치 후 설정 파일 적용할 때 추가한다
+2. OS 상에서 max open files 설정값 조정
+
+```bash
+### 현재 max open files 값 확인
+ulimit -a
+ulimit -Hn # Hard Limit 값
+ulimit -Sn # Soft Limit 값
+### max open files 설정
+ulimit -n <max open files>
+### 서버 재시작 후에도 설정 유지
+vi /etc/security/limits.conf
+# redis 사용자에 대해 Soft/Hard Limit 값 설정
+redis soft nofile <max open files>
+redis hard nofile <max open files>
+* hard nofile <max open files> # * 로 설정하면 모든 사용자에 대해 Limit 값 설정
+```
+
 ## 설치
 
 ### 다운로드
@@ -180,6 +208,11 @@ protected-mode <yes/no>
 # 로그 출력 설정
 dir <경로>/redis/log/
 logfile redis.log
+
+# max open file 설정 : 기본값 10000
+# OS 기본값은 1024 이므로, OS 에 맞추기 위해서는 이 maxclients 값을 992 로 설정
+# 아니면 ulimit 명령어로 OS 기본값을 올리는 것도 방법(위에서 올리는 방법 소개)
+maxclients <max open file 값>
 ```
 
 ### 서비스 시작 및 종료 스크립트 작성
