@@ -141,7 +141,7 @@ server.N=<IP 주소>:2888:3888
 ### Zookeeper ID 파일 설정
 
 - <dataDir>/myid
-    
+
 ```bash
 # <path>/config/server.properties 의 broker.id 값과 동일한 값을 저장한다
 ```
