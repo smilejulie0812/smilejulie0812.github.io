@@ -142,29 +142,27 @@ server.N=<IP 주소>:2888:3888
 
 - <dataDir>/myid
     
-    ```bash
-    # <path>/config/server.properties 의 broker.id 값과 동일한 값을 저장한다
-    ```
-    
+```bash
+# <path>/config/server.properties 의 broker.id 값과 동일한 값을 저장한다
+```
 
 ### Heap Size 조정
 
 - <path>/bin/kafka-server-start.sh
-    
-    ```bash
-    ### Kafka 와 OS 메모리의 비율을 1:2 정도로 잡는 게 일반적
-    ### Kafka 자체가 Heap 공간을 주의해서 사용하므로 5GB 이상은 설정하지 않아도 된다
-    export KAFKA_HEAP_OPTS="-Xmx2G -Xms2G"
-    ```
-    
+
+```bash
+### Kafka 와 OS 메모리의 비율을 1:2 정도로 잡는 게 일반적
+### Kafka 자체가 Heap 공간을 주의해서 사용하므로 5GB 이상은 설정하지 않아도 된다
+export KAFKA_HEAP_OPTS="-Xmx2G -Xms2G"
+```
+
 - <path>/bin/zookeeper-server-start.sh
-    
-    ```bash
-    ### Zookeeper 와 Kafka 의 Heap Size 비율을 1:2 정도로 잡는 게 일반적
-    ### 다만 모니터링을 위해 1GB 정도를 잡아준다
-    export KAFKA_HEAP_OPTS="-Xmx1G -Xms1G"
-    ```
-    
+
+```bash
+### Zookeeper 와 Kafka 의 Heap Size 비율을 1:2 정도로 잡는 게 일반적
+### 다만 모니터링을 위해 1GB 정도를 잡아준다
+export KAFKA_HEAP_OPTS="-Xmx1G -Xms1G"
+```
 
 ## systemd 설정
 
