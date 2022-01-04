@@ -2,11 +2,11 @@
 title: "대용량 트래픽 처리 시스템과 Swap 관계에 대한 고찰"
 excerpt_separator: "<!--more-->"
 categories:
-  - Linux
+  - Infra
 tags:
-  - linux
-  - swap
-  - elasticsearch
+  - Linux
+  - Swap
+  - Elasticsearch
 sidebar:
   nav: "docs"
 
