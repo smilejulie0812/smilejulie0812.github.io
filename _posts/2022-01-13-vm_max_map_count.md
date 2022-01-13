@@ -33,10 +33,9 @@ vm.max_map_count 는 Linux 의 sysctl 설정 변수이다. Linux 에서는 하�
 
 보통 Linux 에서 vm.max_map_count 의 기본값은 65530 이다. 하지만 대용량 데이터 처리에 특화된 Elasticsearch 님께서 움직이시는데 고작 65530 개의 메모리 맵 파일로 제대로 된 처리나 할 수 있겠는가. 저 수치 그대로 두고 Elasticsearch 를 초기 구성해서 시작했다간 이런 로그를 받아보기 일쑤이다.
 
-<aside>
+<div class="notice--info" markdown="1">
 📢 [1]: max virtual memory areas vm.max_map_count [65530] is too low, increase to at least [262144]
-
-</aside>
+</div>
 
 ~~어허 Elasticsearch 님이 움직이신다 메모리 맵 파일을 더 내놓거라~~
 
