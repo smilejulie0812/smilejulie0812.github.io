@@ -100,6 +100,9 @@ author:
   location         : "Incheon, Korea"
   email            :
   links:
+    - label: "Introduce"
+      icon: "fas fa-fw fa-link"
+      url: "https://smilejulie0812.github.io/about/introduction/"
     - label: "Email"
       icon: "fas fa-fw fa-envelope-square"
       url: "mailto:smilejhlee0812@gmail.com"
@@ -112,9 +115,6 @@ author:
     - label: "Website"
       icon: "fas fa-fw fa-link"
       # url: "https://your-website.com"
-    - label: "Introduce"
-      icon: "fas fa-fw fa-link"
-      # url: "https://smilejulie0812.github.io/about/introduction/"
     - label: "Twitter"
       icon: "fab fa-fw fa-twitter-square"
       # url: "https://twitter.com/"
@@ -146,7 +146,6 @@ footer:
     - label: "Instagram"
       icon: "fab fa-fw fa-instagram"
       # url:
-
 
 # Reading Files
 include:
