@@ -1,5 +1,5 @@
 ---
-title: “Redis Sentinel & Cluster”
+title: "Redis Sentinel & Cluster"
 excerpt_separator: "<!--more-->"
 categories:
   - Redis
