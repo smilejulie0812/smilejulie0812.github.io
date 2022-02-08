@@ -16,10 +16,7 @@ sidebar:
 
 ## 컨테이너란?
 
-- 하나의 표준화된 저장 공간
-    
-    → 효율성을 높이고 간편하며 비용 절감 가능
-    
+- 하나의 표준화된 저장 공간 → 효율성을 높이고 간편하며 비용 절감 가능
 - Cloud Native Application 을 빠르게 구축하고 관리할 수 있는 도구
 
 {% raw %}<img src="https://smilejulie0812.github.io/assets/images/reviewAWSOnlineEdu01-1.png" alt="">{% endraw %}
@@ -30,7 +27,6 @@ sidebar:
 2. 요구사항에 맞는 인프라 관리 능력
 3. 빠르고 원활한 확장(Scale-up 혹은 Scale-out)
 4. 보안
-
 → 자동화를 통한 일관된 보안 유지와 운영 부담 감소!
 
 ### 컨테이너와 다른 가상화 환경의 차이는?
@@ -60,9 +56,8 @@ Docker 는 런타임 엔진, 종속성, 코드를 패키지화하여, 버전 등
 
 ### Image
 
-컨테이너를 시작하기 위한 템플릿으로 사용되는 Read-Only 이미지
-
-기본 이미지로 시작해서 종속성 및 사용자 지정 모드를 추가
+* 컨테이너를 시작하기 위한 템플릿으로 사용되는 Read-Only 이미지
+* 기본 이미지로 시작해서 종속성 및 사용자 지정 모드를 추가
 
 {% raw %}<img src="https://smilejulie0812.github.io/assets/images/reviewAWSOnlineEdu01-5.png" alt="">{% endraw %}
 
