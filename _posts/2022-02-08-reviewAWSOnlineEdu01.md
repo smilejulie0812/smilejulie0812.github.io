@@ -49,12 +49,14 @@ VM 과 달리 컨테이너는 기본 호스트 시스템의 OS 커널을 공유
 ### 애플리케이션 환경 구성 요소
 
 {% raw %}<p align="center"><img src="https://smilejulie0812.github.io/assets/images/reviewAWSOnlineEdu01-3.png" alt=""><p>{% endraw %}
+  
 
-※ Runtime Engine(런타임 엔진) : python, Node.js 등 인터프리터 언어를 실행할 때 필요한 모듈
+※ Runtime Engine(런타임 엔진) : python, Node.js 등 인터프리터 언어를 실행할 때 필요한 모듈  
 
 Docker 는 런타임 엔진, 종속성, 코드를 **패키지화**하여, 버전 등의 차이에 상관 없이 사용할 수 있도록 해 준다.
 
 {% raw %}<p align="center"><img src="https://smilejulie0812.github.io/assets/images/reviewAWSOnlineEdu01-4.png" alt=""></p>{% endraw %}
+  
 
 ### Image
 
@@ -62,6 +64,7 @@ Docker 는 런타임 엔진, 종속성, 코드를 **패키지화**하여, 버전
 * **Dockerfile** 을 통해 쉽게 재현 가능한 빌드가 가능해진다
 
 {% raw %}<p align="center"><img src="https://smilejulie0812.github.io/assets/images/reviewAWSOnlineEdu01-6.png" alt=""></p>{% endraw %}
+  
 
 * **Boot Filesystem** : 컨테이너를 시작하기 위한 템플릿으로 사용되는 Read-Only 이미지, 상위에 올릴 **Root Filesystem** 이미지와는 상관없이 일정한 설정을 가져간다.
 * **Writable Container** : 임시적으로 올려서 사용하는 컨테이너로, 해당 컨테이너가 종료되면 저장되어 있던 데이터는 삭제되므로 별도 백업을 해야 함
@@ -76,6 +79,7 @@ Docker 는 런타임 엔진, 종속성, 코드를 **패키지화**하여, 버전
 아래의 그림과 같이 **CentOS7 install → yum update & httpd(Apache) install → Setting** 으로 이어지는 일련의 초기 구축이 **하나의 Dockerfile 작성을 통해 가능**해진다.
 
 {% raw %}<p align="center"><img src="https://smilejulie0812.github.io/assets/images/reviewAWSOnlineEdu01-5.png" alt=""><p>{% endraw %}
+  
 
 ### Docker 사용의 이점
 
@@ -89,6 +93,7 @@ Docker 는 런타임 엔진, 종속성, 코드를 **패키지화**하여, 버전
 
 {% raw %}<img src="https://smilejulie0812.github.io/assets/images/reviewAWSOnlineEdu01-7.png" alt="">{% endraw %}
 
+  
 ### MSA 의 이점
 
 - 분산 및 진화된 설계가 가능해진다
