@@ -15,7 +15,7 @@ sidebar:
 
 ## Redis Sentinel
 
-{% raw %}<img src="https://smilejulie0812.github.io/assets/images/redisSentinelAndCluster-1.png" alt="">{% endraw %}
+{% raw %}<p align="center"><img src="https://smilejulie0812.github.io/assets/images/redisSentinelAndCluster-1.png" alt=""></p>{% endraw %}
 
 - Redis 를 **Master / Slave** 로 구성해서 **HA 를 가능케** 함
 - Master / Slave 의 **관리 역할** (**Sentinel**) 이 별도로 존재
@@ -35,7 +35,7 @@ sidebar:
 
 ## Redis Cluster
 
-{% raw %}<img src="https://smilejulie0812.github.io/assets/images/redisSentinelAndCluster-2.png" alt="">{% endraw %}
+{% raw %}<p align="center"><img src="https://smilejulie0812.github.io/assets/images/redisSentinelAndCluster-2.png" alt=""></p>{% endraw %}
 
 - Sentinel 보다 발전된 형태
 - **샤딩 기능**을 통해 **데이터를 분산 저장**할 수 있음
