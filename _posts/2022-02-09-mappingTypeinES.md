@@ -69,10 +69,8 @@ output {
 
 그래, Index Template 의 Mapping 설정이랑 mapping type 을 설정해주는 옵션 document_type 이 애초에 다른데 데이터 인입이 정상적일 리 없지. 게다가,
 
-<div class="notice" markdown="1">
-📢 When connected to Elasticsearch 7.x, modern versions of this plugin don’t use the document-type when inserting documents, unless the user explicitly sets `[document_type](https://www.elastic.co/guide/en/logstash/current/plugins-outputs-elasticsearch.html#plugins-outputs-elasticsearch-document_type)`. If you are using an earlier version of Logstash and wish to connect to Elasticsearch 7.x, first upgrade Logstash to version 6.8 to ensure it picks up changes to the Elasticsearch index template. **If you are using a custom `[template](https://www.elastic.co/guide/en/logstash/current/plugins-outputs-elasticsearch.html#plugins-outputs-elasticsearch-template)`, ensure your template uses the `_doc` document-type before connecting to Elasticsearch 7.x.**
-
-</div>
+> When connected to Elasticsearch 7.x, modern versions of this plugin don’t use the document-type when inserting documents, unless the user explicitly sets **document_type**. If you are using an earlier version of Logstash and wish to connect to Elasticsearch 7.x, first upgrade Logstash to version 6.8 to ensure it picks up changes to the Elasticsearch index template. **If you are using a custom `template`, ensure your template uses the `_doc` document-type before connecting to Elasticsearch 7.x.**
+> 
 
 ... 커스텀한 Index Template 을 쓰려면 얌전히 버전 7의 법칙에 따르라는 말이다.
 
